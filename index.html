@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Student Management System</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+<header>
+  <div><h1>Student Management System</h1><p>Java MVC + JDBC + PostgreSQL</p></div>
+  <button onclick="openForm()">+ Add Student</button>
+</header>
+
+<section class="card">
+  <div class="toolbar">
+    <input id="search" placeholder="Search by name, email or course" oninput="render()">
+    <span id="count"></span>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Course</th><th>Phone</th><th>Actions</th></tr></thead>
+      <tbody id="studentRows"></tbody>
+    </table>
+  </div>
+</section>
+
+<div id="modal" class="modal">
+ <div class="modal-box">
+  <h2 id="formTitle">Add Student</h2>
+  <form id="studentForm">
+   <input id="studentId" type="hidden">
+   <label>Name</label><input id="name" required>
+   <label>Email</label><input id="email" type="email" required>
+   <label>Course</label><input id="course" required>
+   <label>Phone</label><input id="phone">
+   <div class="actions"><button type="button" class="secondary" onclick="closeForm()">Cancel</button>
+   <button type="submit">Save</button></div>
+  </form>
+ </div>
+</div>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>
